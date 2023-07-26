@@ -139,7 +139,7 @@ jobs:
         dockerfiles: |
           ./Dockerfile
 
-    # https://github.com/redhat-actions/push-to-registry#readme
+    # https://github.com/redhat-acti ons/push-to-registry#readme
     - name: Push to registry
       id: push-image
       uses: redhat-actions/push-to-registry@v2
