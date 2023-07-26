@@ -138,11 +138,6 @@ jobs:
         # Otherwise, point this to your Dockerfile/Containerfile relative to the repository root.
         dockerfiles: |
           ./Dockerfile
-    
-    - name: SHOW Credenciales
-      run: |
-        echo "IMAGE_REGISTRY_USER: ${IMAGE_REGISTRY_USER}"
-        echo "IMAGE_REGISTRY_PASSWORD: ${IMAGE_REGISTRY_PASSWORD}"
 
     # https://github.com/redhat-actions/push-to-registry#readme
     - name: Push to registry
