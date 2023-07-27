@@ -165,6 +165,14 @@ jobs:
         openshift_token: ${{ env.OPENSHIFT_TOKEN }}
         insecure_skip_tls_verify: true
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}
+        
+    - name: Crea Proyecto
+      run: |
+        if oc get project ${OPENSHIFT_NAMESPACE} > /dev/null 2>&1; then
+            echo "Ya existe el namespace ${OPENSHIFT_NAMESPACE}"
+          else
+            oc new-project ${OPENSHIFT_NAMESPACE}
+        fi
 
     # This step should create a deployment, service, and route to run your app and expose it to the internet.
     # https://github.com/redhat-actions/oc-new-app#readme
